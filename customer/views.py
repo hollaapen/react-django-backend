@@ -12,6 +12,12 @@ def customers(request):
     return JsonResponse({'customers':serializer.data})
 
 
+def details(request, id):
+    data = Customer.objects.get(id=id)
+    serializer = CustomerSerializer(data)
+    return JsonResponse({'customer':serializer.data})
+
+
 
 
 
