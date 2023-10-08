@@ -1,14 +1,14 @@
 from rest_framework import serializers
 from customer.models import Customer
+from customer.models import Students
+
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = '__all__'
 
-        # install django cors headers
-        # pip install django-cors-headers
-#         add it into installed apps and middlewares
-
-# create a list of allowed origins in the settings file
-
+class StudentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Students
+        fields = '__all__'
